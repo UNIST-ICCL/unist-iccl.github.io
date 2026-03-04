@@ -1,1 +1,1 @@
-- [Labs and Project][./projects.html]
+- [Labs and Project](./projects.html)
