@@ -1,0 +1,951 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-03-04 Wed 16:23 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>EEE426 Labs and Project</title>
+<meta name="author" content="Jongeun Lee" />
+<meta name="generator" content="Org Mode" />
+<style>
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="https://iccl.unist.ac.kr/~jlee/etc/org-basic.css" />
+<style> #postamble p {color:gray; font-size:90%; margin: .2em} #postamble {border:1px solid gray}</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">EEE426 Labs and Project</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org089d60c">1. Lab 1: Learning Pynq Z2 board using FFT example <span class="timestamp-wrapper"><span class="timestamp">&lt;2026-03-11 Wed&gt;</span></span></a>
+<ul>
+<li><a href="#org10e5531">1.1. Step 1</a></li>
+<li><a href="#orgd0105de">1.2. Step 2: generate the bitstream file for FFT design</a></li>
+<li><a href="#org04b02af">1.3. Step 3</a></li>
+<li><a href="#org474bf42">1.4. Step 4 (jupyter)</a></li>
+<li><a href="#org846faad">1.5. Report</a>
+<ul>
+<li><a href="#org1ec6016">1.5.1. How to submit a report</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgb00d454">2. Lab 2: Vivado HLS - Scalar Add <span class="timestamp-wrapper"><span class="timestamp">&lt;2026-03-18 Wed&gt;</span></span></a>
+<ul>
+<li><a href="#orgd7fb6fc">2.1. Dependencies</a></li>
+<li><a href="#org73e2085">2.2. Procedure</a></li>
+<li><a href="#org3153513">2.3. What to submit</a></li>
+</ul>
+</li>
+<li><a href="#org651f827">3. Lab 3: Vivado HLS - Vector Add <span class="timestamp-wrapper"><span class="timestamp">&lt;2026-03-25 Wed&gt;</span></span></a>
+<ul>
+<li><a href="#orgc1c3152">3.1. Description</a></li>
+<li><a href="#orgc2a9594">3.2. Dependencies</a></li>
+<li><a href="#org85d92c0">3.3. Procedure</a>
+<ul>
+<li><a href="#org2e4c58c">3.3.1. Part 1</a></li>
+<li><a href="#org872b332">3.3.2. Part 2</a></li>
+<li><a href="#org113d8b4">3.3.3. Part 3</a></li>
+</ul>
+</li>
+<li><a href="#orga61a7a8">3.4. Note</a></li>
+<li><a href="#org9e8802f">3.5. Assignment</a></li>
+</ul>
+</li>
+<li><a href="#orga87bb5a">4. Lab 4: Vivado HLS - Vector Add with DMA <span class="timestamp-wrapper"><span class="timestamp">&lt;2026-04-01 Wed&gt;</span></span></a>
+<ul>
+<li><a href="#orgca69b9f">4.1. Description</a></li>
+<li><a href="#org7d182e2">4.2. References</a></li>
+<li><a href="#org80d4959">4.3. Procedure</a></li>
+<li><a href="#org5cfd947">4.4. Assignment</a></li>
+</ul>
+</li>
+<li><a href="#org0cffa03">5. Lab 5: Vivado HLS - Matrix Multiplication <span class="timestamp-wrapper"><span class="timestamp">&lt;2026-04-08 Wed&gt;</span></span></a>
+<ul>
+<li><a href="#orgb2ee535">5.1. Description</a></li>
+<li><a href="#orgc674029">5.2. Assignment</a></li>
+</ul>
+</li>
+<li><a href="#orga784202">6. Lab 6: Customizing a Python-based Neural Network Framework <span class="timestamp-wrapper"><span class="timestamp">&lt;2026-04-29 Wed&gt;</span></span></a>
+<ul>
+<li><a href="#orgbf5878a">6.1. Description</a></li>
+<li><a href="#orgb30e28c">6.2. Procedure</a></li>
+<li><a href="#orgf5e4129">6.3. Assignment</a></li>
+</ul>
+</li>
+<li><a href="#org2bb8cc8">7. Lab 7: Presentation + Optimization Methods <span class="timestamp-wrapper"><span class="timestamp">&lt;2026-05-06 Wed&gt;</span></span></a>
+<ul>
+<li><a href="#orgf3d2f9d">7.1. Presentation of Lab 7 Results</a></li>
+<li><a href="#org9897d35">7.2. Optimization Methods Description</a></li>
+<li><a href="#orgb2cd86f">7.3. Procedure</a></li>
+<li><a href="#org7eb6dfb">7.4. Assignment</a></li>
+</ul>
+</li>
+<li><a href="#orga2d92e5">8. Final Project (TBD)</a></li>
+<li><a href="#org4a3f2ad">9. How to Install</a></li>
+<li><a href="#org0080792">10. References</a></li>
+<li><a href="#org253e2a4">11. Resources for the Final Project</a>
+<ul>
+<li><a href="#org65df77e">11.1. FINN, a framework to deploy DNN on FPGAs</a></li>
+<li><a href="#orgfe6ab91">11.2. NPUs, on the other hand, are more flexible and supports various operations (matmul, conv, ReLU, ect) with their own ISA.</a></li>
+<li><a href="#org6562d52">11.3. If you are extremely interested in NPU dataflows or if you are an graduate student, read the paper below</a></li>
+<li><a href="#orge012f9f">11.4. Below are materials for quantization (in a chronological order)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+#UPLOAD: //ihpc.unist.ac.kr/lab/Users/JongeunLee/ee426/projects.html
+</p>
+
+<p>
+Spring 2026<br />
+Instructor: Jongeun Lee<br />
+TAs: Eunseok Cho, YoungNo Kim, Sunjae Kim
+</p>
+
+<p>
+<br />
+<b><b>Note 1</b></b>: See §<a href="#org4a3f2ad">9</a> for how to install tools and §<a href="#org0080792">10</a> for useful links.
+The Final Project (§<a href="#orga2d92e5">8</a>) is not yet decided.<br />
+<b><b>Note 2</b></b>: The lab description below is based on a previous offering of the same course, and may change during the semester.
+</p>
+
+<div id="outline-container-org089d60c" class="outline-2">
+<h2 id="org089d60c"><span class="section-number-2">1.</span> Lab 1: Learning Pynq Z2 board using FFT example <span class="timestamp-wrapper"><span class="timestamp">&lt;2026-03-11 Wed&gt;</span></span></h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org10e5531" class="outline-3">
+<h3 id="org10e5531"><span class="section-number-3">1.1.</span> Step 1</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>Install <code>Vivado</code>
+<ul class="org-ul">
+<li>Remember to add pinmap file</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd0105de" class="outline-3">
+<h3 id="orgd0105de"><span class="section-number-3">1.2.</span> Step 2: generate the bitstream file for FFT design</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>Open top-level design and do synthesis, creating a bitstream file</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org04b02af" class="outline-3">
+<h3 id="org04b02af"><span class="section-number-3">1.3.</span> Step 3</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>Upload the bitstream file to Pynq-Z2 via web browswer</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org474bf42" class="outline-3">
+<h3 id="org474bf42"><span class="section-number-3">1.4.</span> Step 4 (jupyter)</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li>Run FFT on Pynq FPGA, analyze runtime between SW numpy vs. Pynq FPGA acceleration</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org846faad" class="outline-3">
+<h3 id="org846faad"><span class="section-number-3">1.5.</span> Report</h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li>Draw a graph showing runtime vs. array size for (i) SW numpy and (ii) Pynq FPGA.  You may plot both graphs in a single figure.</li>
+<li>Verify the functionality of FFT, by feeding a sign function as the input to FFT.  Verify the output of FFT.</li>
+</ul>
+</div>
+<div id="outline-container-org1ec6016" class="outline-4">
+<h4 id="org1ec6016"><span class="section-number-4">1.5.1.</span> How to submit a report</h4>
+<div class="outline-text-4" id="text-1-5-1">
+<ul class="org-ul">
+<li>Submit one report per group via Bb</li>
+<li>Specify the contribution of each person in the report</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb00d454" class="outline-2">
+<h2 id="orgb00d454"><span class="section-number-2">2.</span> Lab 2: Vivado HLS - Scalar Add <span class="timestamp-wrapper"><span class="timestamp">&lt;2026-03-18 Wed&gt;</span></span></h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orgd7fb6fc" class="outline-3">
+<h3 id="orgd7fb6fc"><span class="section-number-3">2.1.</span> Dependencies</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>Make sure you have installed <code>Vivado HLS</code></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org73e2085" class="outline-3">
+<h3 id="org73e2085"><span class="section-number-3">2.2.</span> Procedure</h3>
+<div class="outline-text-3" id="text-2-2">
+<ol class="org-ol">
+<li>Write a module in Vivado HLS</li>
+<li>Write test software</li>
+<li>Run C-simulation</li>
+<li>Verify the result of C-simulation</li>
+<li>Run C-synthesis</li>
+<li>Understand the result of C-synthesis</li>
+<li>Run Cosim</li>
+<li>Export the design as an IP</li>
+<li>Import the IP in the Vivado design environment</li>
+<li>Generate a bitstream</li>
+<li>Create an overlay, and make a driver in Python</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org3153513" class="outline-3">
+<h3 id="org3153513"><span class="section-number-3">2.3.</span> What to submit</h3>
+<div class="outline-text-3" id="text-2-3">
+<ol class="org-ol">
+<li>A compressed zip file of the generated IP files, (b) a bitstream file, (b) a Python Jupyter Notebook file;</li>
+<li>A report, which should include a top-level diagram and the results of C-simulation, C-synthesis, and Cosimulation.</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org651f827" class="outline-2">
+<h2 id="org651f827"><span class="section-number-2">3.</span> Lab 3: Vivado HLS - Vector Add <span class="timestamp-wrapper"><span class="timestamp">&lt;2026-03-25 Wed&gt;</span></span></h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orgc1c3152" class="outline-3">
+<h3 id="orgc1c3152"><span class="section-number-3">3.1.</span> Description</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>This week's lab is similar to the previous week's.  The main difference is that we use <b>vectors</b> for input and output.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc2a9594" class="outline-3">
+<h3 id="orgc2a9594"><span class="section-number-3">3.2.</span> Dependencies</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>Vivado HLS</li>
+<li>Vivado</li>
+<li>Pynq board</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org85d92c0" class="outline-3">
+<h3 id="org85d92c0"><span class="section-number-3">3.3.</span> Procedure</h3>
+<div class="outline-text-3" id="text-3-3">
+</div>
+<div id="outline-container-org2e4c58c" class="outline-4">
+<h4 id="org2e4c58c"><span class="section-number-4">3.3.1.</span> Part 1</h4>
+<div class="outline-text-4" id="text-3-3-1">
+<ol class="org-ol">
+<li>Create a new Vivado HLS project</li>
+<li>Write vadd module and testbench (<code>vadd.c</code>, <code>vadd.h</code>, <code>tb_vadd.cpp</code>)</li>
+<li>Run C-simulation</li>
+<li>Run C-synthesis</li>
+<li>Observe the error msg</li>
+<li>Fix the error by adding INTERFACE pragma (run C-synthesis again)</li>
+<li>Observe the synthesis result, esp. latency</li>
+<li>Add the UNROLL pragma, and run C-synthesis again</li>
+<li>Observe how latency is changed</li>
+<li>Think about how to reduce latency</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org872b332" class="outline-4">
+<h4 id="org872b332"><span class="section-number-4">3.3.2.</span> Part 2</h4>
+<div class="outline-text-4" id="text-3-3-2">
+<ol class="org-ol">
+<li><p>
+Make sure that your vadd module has an interrupt port
+</p>
+<pre class="example">
+#progma HLS INTERFACE s_axilite port=return bundle=control
+</pre></li>
+<li>Create a new Vivado project</li>
+<li>Instantiate the vadd module; observe that it has <code>interrupt</code> output port</li>
+<li>Instantiate AXI Interconnects (and other necessary modules) and complete the top-level design</li>
+<li>Make sure you configure IPs as necessary (AXI Interrupt Controller, AXI Interconnects, Processing System, etc.)</li>
+<li>Validate the design, create HDL Wrapper, and generate bitstream</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org113d8b4" class="outline-4">
+<h4 id="org113d8b4"><span class="section-number-4">3.3.3.</span> Part 3</h4>
+<div class="outline-text-4" id="text-3-3-3">
+<ol class="org-ol">
+<li>Open Jupyter notebook</li>
+<li>Load overlay and write Python code using the overlay (without using interrupt)</li>
+<li>See if the result is correct (will it be correct even if computation takes much longer?)</li>
+<li>Write Python code using interrupt as demonstrated in the lab</li>
+<li>Check if the result is correct even when computation takes long</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-orga61a7a8" class="outline-3">
+<h3 id="orga61a7a8"><span class="section-number-3">3.4.</span> Note</h3>
+<div class="outline-text-3" id="text-3-4">
+<ul class="org-ul">
+<li>The previous lab was reviewed.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9e8802f" class="outline-3">
+<h3 id="org9e8802f"><span class="section-number-3">3.5.</span> Assignment</h3>
+<div class="outline-text-3" id="text-3-5">
+<ul class="org-ul">
+<li><p>
+Do the SAXPY example.  Use the following function prototype (You may hard-code SIZE)
+</p>
+<pre class="example">
+void saxpy_hw(float *x, float *y, float a);     // y[i] = y[i] + a * x[i]
+</pre></li>
+<li>Explore various methods to improve latency, and explain your findings in the report</li>
+<li>Submit the report and other files as usual</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga87bb5a" class="outline-2">
+<h2 id="orga87bb5a"><span class="section-number-2">4.</span> Lab 4: Vivado HLS - Vector Add with DMA <span class="timestamp-wrapper"><span class="timestamp">&lt;2026-04-01 Wed&gt;</span></span></h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-orgca69b9f" class="outline-3">
+<h3 id="orgca69b9f"><span class="section-number-3">4.1.</span> Description</h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>Improve the performance of vadd using DMA</li>
+<li>Learn to use the <code>hls::stream&lt;&gt;</code> class</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7d182e2" class="outline-3">
+<h3 id="org7d182e2"><span class="section-number-3">4.2.</span> References</h3>
+<div class="outline-text-3" id="text-4-2">
+<ol class="org-ol">
+<li><a href="https://github.com/Xilinx/Vitis_Accel_Examples/blob/master/cpp_kernels/simple_vadd/src/krnl_vadd.cpp">https://github.com/Xilinx/Vitis_Accel_Examples/blob/master/cpp_kernels/simple_vadd/src/krnl_vadd.cpp</a></li>
+<li><a href="https://docs.xilinx.com/r/en-US/ug1399-vitis-hls/HLS-Stream-Library">https://docs.xilinx.com/r/en-US/ug1399-vitis-hls/HLS-Stream-Library</a></li>
+<li><a href="https://docs.xilinx.com/r/en-US/ug1399-vitis-hls/AXI4-Stream-Interfaces">https://docs.xilinx.com/r/en-US/ug1399-vitis-hls/AXI4-Stream-Interfaces</a></li>
+<li>UG902 <a href="https://www.xilinx.com/support/documentation/sw_manuals/xilinx2020_1/ug902-vivado-high-level-synthesis.pdf">https://www.xilinx.com/support/documentation/sw_manuals/xilinx2020_1/ug902-vivado-high-level-synthesis.pdf</a></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org80d4959" class="outline-3">
+<h3 id="org80d4959"><span class="section-number-3">4.3.</span> Procedure</h3>
+<div class="outline-text-3" id="text-4-3">
+<ol class="org-ol">
+<li>Study the <code>vadd</code> example in Ref. 1 above (see also Ref. 2 for HLS stream library).  Note: This code may not run on the Pynq board.</li>
+<li>To make it run on Pynq, we will mainly define/use <code>push_stream</code> and <code>pop_stream</code> functions along with some minor modification of the code.</li>
+<li>Refer to Ref. 3 above for an exmple of how to use the <code>ap_axiu</code> type, which is defined in <code>"ap_axi_sdata.h"</code>.</li>
+<li>The rest of the flow is the same as in the previous lab.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org5cfd947" class="outline-3">
+<h3 id="org5cfd947"><span class="section-number-3">4.4.</span> Assignment</h3>
+<div class="outline-text-3" id="text-4-4">
+<ul class="org-ul">
+<li><p>
+Implement the following SAXPY kernel in hardware using DMA as we learned in the lab.
+</p>
+<pre class="example">
+void saxpy_hw(float *z, float *x, float *y, float a);     // z[i] = a * x[i] + y[i]
+</pre>
+
+<ol class="org-ol">
+<li>Note the order of the parameters.</li>
+<li>Follow the advice given by Jaewoo, TA, about performing buffer allocation in the constructor of a Python class.</li>
+</ol></li>
+<li>Submit source code (including testbench and header files if any and Python/Jupyter files) as well as your implementation files (IP, bitstream).</li>
+<li>Submit also a report, which should include the top-level diagram and the results of C-simulation, C-synthesis, and Cosimulation.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0cffa03" class="outline-2">
+<h2 id="org0cffa03"><span class="section-number-2">5.</span> Lab 5: Vivado HLS - Matrix Multiplication <span class="timestamp-wrapper"><span class="timestamp">&lt;2026-04-08 Wed&gt;</span></span></h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-orgb2ee535" class="outline-3">
+<h3 id="orgb2ee535"><span class="section-number-3">5.1.</span> Description</h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li>Write a basic matrix multiplication kernel and verify its functionality on a Pynq board using the Python layer</li>
+<li>The use of DMA as in the previous lab is <b>required</b>.</li>
+<li>Optimization of the kernel (such as loop unrolling and the use of buffers) is <b>NOT</b> required.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc674029" class="outline-3">
+<h3 id="orgc674029"><span class="section-number-3">5.2.</span> Assignment</h3>
+<div class="outline-text-3" id="text-5-2">
+<ul class="org-ul">
+<li><p>
+Implement a matrix multiplication kernel in hardware using Vivado HLS
+</p>
+
+<pre class="example">
+void matmul_hw(float *C, float *A, float *B);    // C = A * B
+</pre>
+
+<ul class="org-ul">
+<li>The sizes of the matrices are fixed as follows (you may hard-code them): <del><code>float C[128][128], A[128][256], B[256][128]</code></del> → <code>float C[64][64], A[64][128], B[128][64]</code></li>
+<li>Note: the top-level function of HLS module should have a slightly different prototype</li>
+</ul></li>
+<li>Use DMA as in the previous lab.  Use the DMA function provided: <a href="dma_template.h">dma_template.h</a>.
+<ul class="org-ul">
+<li>The use of different template parameters in <code>ap_axiu&lt;32,4,5,5&gt;</code> is to avoid compatibility issues.</li>
+<li>Since we're using DMA, the interface of the top-level function is very similar to that of the previous lab, but internally you'll have to change how to handle the values you recieve via AXIS.  Specifically, you won't be able to use <code>hls::stream&lt;&gt;</code> as in the previous lab, but should store them in a local memory due to the complex access pattern required in the compute loop.</li>
+</ul></li>
+<li>As usual, submit your source code as well as your implementation files; Submit also a report, which should include the top-level diagram and the results of C-simulation, C-synthesis, and Cosimulation.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga784202" class="outline-2">
+<h2 id="orga784202"><span class="section-number-2">6.</span> Lab 6: Customizing a Python-based Neural Network Framework <span class="timestamp-wrapper"><span class="timestamp">&lt;2026-04-29 Wed&gt;</span></span></h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-orgbf5878a" class="outline-3">
+<h3 id="orgbf5878a"><span class="section-number-3">6.1.</span> Description</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+Learn how to use a Python (PyTorch)-based neural network framework and how to customize it so (some) inference computation can be offloaded to hardware.
+</p>
+</div>
+</div>
+<div id="outline-container-orgb30e28c" class="outline-3">
+<h3 id="orgb30e28c"><span class="section-number-3">6.2.</span> Procedure</h3>
+<div class="outline-text-3" id="text-6-2">
+<ol class="org-ol">
+<li>MNIST neural network inference using PyTorch. (<a href="mnist.py">mnist.py</a>)
+<ul class="org-ul">
+<li>Training included</li>
+</ul></li>
+<li>Consider how to use HW MatMul for the MNIST neural network inference.</li>
+<li>Write Python-based MNIST inference code. (<a href="numpymnist.py">numpymnist.py</a>) (<a href="numpy_layer.py">numpy_layer.py</a>)</li>
+<li>Override Linear layer with a function that calls MatMul HW.</li>
+<li>In order to use integer MatMul HW, we have to change the type of input operands to MatMul.  Modify the Python code accordingly (recall the quantization method discussed in lecture).</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgf5e4129" class="outline-3">
+<h3 id="orgf5e4129"><span class="section-number-3">6.3.</span> Assignment</h3>
+<div class="outline-text-3" id="text-6-3">
+<ul class="org-ul">
+<li>Port the MNIST inference code to the Pynq board, by offloading the second layer to the hardware.  For this, you'll need to generate N-bit integer MatMul hardware.  (ARM-Python is already included in Pynq.)</li>
+<li>Try to minimize the parameter "N", which is the precision of activation and weight tensors.</li>
+<li>As usual, submit your source code as well as your implementation files.  Submit also a report as usual (see the next item for the contents of the report).</li>
+<li>In the next lab, each team will give a presentation on their work, which should include the Pynq board execution result, classification accuracy, total execution time, and the value of the parameter "N".</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2bb8cc8" class="outline-2">
+<h2 id="org2bb8cc8"><span class="section-number-2">7.</span> Lab 7: Presentation + Optimization Methods <span class="timestamp-wrapper"><span class="timestamp">&lt;2026-05-06 Wed&gt;</span></span></h2>
+<div class="outline-text-2" id="text-7">
+</div>
+<div id="outline-container-orgf3d2f9d" class="outline-3">
+<h3 id="orgf3d2f9d"><span class="section-number-3">7.1.</span> Presentation of Lab 7 Results</h3>
+<div class="outline-text-3" id="text-7-1">
+<p>
+Integrating the Pynq board and the hardware accelerator running on it with the application software is an important milestone.
+Hence we'll have a presentation session in the first half of the lab.
+Please prepare to present your Lab 7 results; best if everyone presents.
+</p>
+</div>
+</div>
+<div id="outline-container-org9897d35" class="outline-3">
+<h3 id="org9897d35"><span class="section-number-3">7.2.</span> Optimization Methods Description</h3>
+<div class="outline-text-3" id="text-7-2">
+<p>
+(i) Learn to use array partition and array reshape via a simple matrix multiplication example.  (ii) Support arbitrarily large matrices.
+</p>
+</div>
+</div>
+<div id="outline-container-orgb2cd86f" class="outline-3">
+<h3 id="orgb2cd86f"><span class="section-number-3">7.3.</span> Procedure</h3>
+<div class="outline-text-3" id="text-7-3">
+<ol class="org-ol">
+<li>Observe the inefficiency in a simple matrix multiplication example</li>
+<li>Apply array partition and observe the difference in synthesis results</li>
+<li>Consider how to support matrix multiplications with arbitrarily large size matrices</li>
+<li>Implement your idea and verify the results</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org7eb6dfb" class="outline-3">
+<h3 id="org7eb6dfb"><span class="section-number-3">7.4.</span> Assignment</h3>
+<div class="outline-text-3" id="text-7-4">
+<ul class="org-ul">
+<li>Final project (due: TBD)</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga2d92e5" class="outline-2">
+<h2 id="orga2d92e5"><span class="section-number-2">8.</span> Final Project (TBD)</h2>
+</div>
+
+<div id="outline-container-org4a3f2ad" class="outline-2">
+<h2 id="org4a3f2ad"><span class="section-number-2">9.</span> How to Install</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+Here is the recommended installation procedure.
+</p>
+<ol class="org-ol">
+<li>System requirements: <code>Windows10</code> or <code>Ubuntu 18.04</code> only.  (WARNING: Ubuntu 18.04.05 may <b><b>NOT</b></b> work.)
+Note: Large HDD space required (installation file alone is &gt;10GB).</li>
+<li>Visit <a href="https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/archive.html">https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/archive.html</a> and download the installation file
+<ul class="org-ul">
+<li>You must have a Xilinx account.</li>
+<li>The version we'll use is Xilinx Vivado <b><b>2020.1</b></b> (other versions may <b><b>NOT</b></b> work for our examples).</li>
+<li>Download either <a href="https://www.xilinx.com/member/forms/download/xef.html?filename=Xilinx_Unified_2020.1_0602_1208_Win64.exe">Xilinx Unified Installer 2020.1: Windows Self Extracting Web Installer</a> or <a href="https://www.xilinx.com/member/forms/download/xef.html?filename=Xilinx_Unified_2020.1_0602_1208_Lin64.bin">Xilinx Unified Installer 2020.1: Linux Self Extracting Web Installer</a>.</li>
+</ul></li>
+<li>Apply patch:  <a href="https://support.xilinx.com/s/article/76960">https://support.xilinx.com/s/article/76960</a>.
+Otherwise, it will cause problems with Vivado HLS.</li>
+<li>Apply PYNQ-Z2 board file: <a href="./pynq-z2.zip">pynq-z2.zip</a>.
+Unzip the file at <b><b>your_vivado_path/Vivado/2020.1/data/boards/board_files</b></b>.
+After unzipping, you should have <b><b>data/boards/board_files/pynq-z2/A.0</b></b></li>
+</ol>
+
+<p>
+<font color=red>It takes literally hours to complete installation.</font>  So start installing Vivado today!
+</p>
+
+<p>
+Post your questions on BlackBoard if you have any!
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0080792" class="outline-2">
+<h2 id="org0080792"><span class="section-number-2">10.</span> References</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+<b><b>Tools</b></b>
+</p>
+<ul class="org-ul">
+<li>Xilinx Vivado <b><b>2020.1</b></b> (other versions may <b><b>NOT</b></b> work)
+<ul class="org-ul">
+<li><a href="https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/archive.html">https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/archive.html</a></li>
+<li>Note: Windows10 and Ubuntu 18.04 recommended (but I hear Windows11 also works)</li>
+<li>Patch: <a href="https://support.xilinx.com/s/article/76960?language=en_US">https://support.xilinx.com/s/article/76960?language=en_US</a></li>
+</ul></li>
+</ul>
+
+<p>
+<b><b>Documentation and Examples</b></b>
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Topic</th>
+<th scope="col" class="org-left">Links</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Pynq library</td>
+<td class="org-left"><a href="https://pynq.readthedocs.io/en/latest/pynq_package/pynq.lib.html">https://pynq.readthedocs.io/en/latest/pynq_package/pynq.lib.html</a></td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><a href="https://pynq.readthedocs.io/en/latest/pynq_libraries/overlay.html">https://pynq.readthedocs.io/en/latest/pynq_libraries/overlay.html</a></td>
+</tr>
+
+<tr>
+<td class="org-left">HLS pragmas</td>
+<td class="org-left"><a href="https://www.xilinx.com/html_docs/xilinx2017_4/sdaccel_doc/jit1504034365862.html">https://www.xilinx.com/html_docs/xilinx2017_4/sdaccel_doc/jit1504034365862.html</a></td>
+</tr>
+
+<tr>
+<td class="org-left">HLS (Korean)</td>
+<td class="org-left"><a href="https://wikidocs.net/book/4588">https://wikidocs.net/book/4588</a></td>
+</tr>
+
+<tr>
+<td class="org-left">Interface</td>
+<td class="org-left"><a href="https://docs.xilinx.com/r/en-US/ug1399-vitis-hls/S_AXILITE-Example">https://docs.xilinx.com/r/en-US/ug1399-vitis-hls/S_AXILITE-Example</a></td>
+</tr>
+
+<tr>
+<td class="org-left">AXI basics 1~</td>
+<td class="org-left"><a href="https://support.xilinx.com/s/article/1053914?language=en_US">https://support.xilinx.com/s/article/1053914?language=en_US</a></td>
+</tr>
+
+<tr>
+<td class="org-left">Examples by Xilinx</td>
+<td class="org-left"><a href="https://github.com/Xilinx/Vitis-HLS-Introductory-Examples">https://github.com/Xilinx/Vitis-HLS-Introductory-Examples</a></td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><a href="https://github.com/Xilinx/SDAccel_Examples/tree/master/getting_started">https://github.com/Xilinx/SDAccel_Examples/tree/master/getting_started</a></td>
+</tr>
+
+<tr>
+<td class="org-left">HLS manual (UG902)</td>
+<td class="org-left"><a href="https://docs.amd.com/v/u/en-US/ug902-vivado-high-level-synthesis">https://docs.amd.com/v/u/en-US/ug902-vivado-high-level-synthesis</a></td>
+</tr>
+</tbody>
+</table>
+
+<p>
+For <b><b>Interface Synthesis,</b></b> see UG902, p.78.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org253e2a4" class="outline-2">
+<h2 id="org253e2a4"><span class="section-number-2">11.</span> Resources for the Final Project</h2>
+<div class="outline-text-2" id="text-11">
+</div>
+<div id="outline-container-org65df77e" class="outline-3">
+<h3 id="org65df77e"><span class="section-number-3">11.1.</span> FINN, a framework to deploy DNN on FPGAs</h3>
+<div class="outline-text-3" id="text-11-1">
+<p>
+FINN generates a dedicated accelerator, meaning that the generated HW has no programmability, only can accelerate a single model architecture.
+</p>
+
+<p>
+paper <a href="https://arxiv.org/pdf/1612.07119">https://arxiv.org/pdf/1612.07119</a>
+</p>
+
+<p>
+github <a href="https://github.com/Xilinx/finn">https://github.com/Xilinx/finn</a>
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgfe6ab91" class="outline-3">
+<h3 id="orgfe6ab91"><span class="section-number-3">11.2.</span> NPUs, on the other hand, are more flexible and supports various operations (matmul, conv, ReLU, ect) with their own ISA.</h3>
+<div class="outline-text-3" id="text-11-2">
+<ul class="org-ul">
+<li>Gemmini, an open source NPU from UCB (written in chisel scala)</li>
+</ul>
+
+<p>
+paper <a href="https://arxiv.org/abs/1911.09925">https://arxiv.org/abs/1911.09925</a>
+</p>
+
+<p>
+github <a href="https://github.com/ucb-bar/gemmini">https://github.com/ucb-bar/gemmini</a>
+</p>
+
+
+<ul class="org-ul">
+<li>Google's TPU, a foundation for most of the modern NPU architectures</li>
+</ul>
+
+<p>
+paper <a href="https://arxiv.org/abs/1704.04760">https://arxiv.org/abs/1704.04760</a>
+</p>
+
+
+<ul class="org-ul">
+<li>TVM VTA, another open source NPU, written in HLS</li>
+</ul>
+
+<p>
+However, the architecture is sub-optimal (slow) and outdated
+</p>
+
+<p>
+paper <a href="https://arxiv.org/abs/1807.04188">https://arxiv.org/abs/1807.04188</a>
+</p>
+
+<p>
+github <a href="https://github.com/apache/tvm-vta">https://github.com/apache/tvm-vta</a>
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org6562d52" class="outline-3">
+<h3 id="org6562d52"><span class="section-number-3">11.3.</span> If you are extremely interested in NPU dataflows or if you are an graduate student, read the paper below</h3>
+<div class="outline-text-3" id="text-11-3">
+<p>
+Understanding Reuse, Performance, and Hardware Cost of DNN Dataflows: A Data-Centric Approach Using MAESTRO <a href="https://arxiv.org/abs/1805.02566">https://arxiv.org/abs/1805.02566</a>
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orge012f9f" class="outline-3">
+<h3 id="orge012f9f"><span class="section-number-3">11.4.</span> Below are materials for quantization (in a chronological order)</h3>
+<div class="outline-text-3" id="text-11-4">
+<ul class="org-ul">
+<li>2015 BinaryNets <a href="https://arxiv.org/abs/1602.02830">https://arxiv.org/abs/1602.02830</a></li>
+</ul>
+
+<p>
+This paper explains the concept of BNN (Binary Neural Networks), a STE (straight-through estimator) to train discretized weights using gradient descent.
+</p>
+
+<p>
+Also, you can take a look how to exploit XNOR-POPCOUNT to accelerate BNNs (a novel feature of BNNs).
+</p>
+
+
+<ul class="org-ul">
+<li>2019 Learned Step Size Quantization <a href="https://arxiv.org/abs/1902.08153">https://arxiv.org/abs/1902.08153</a></li>
+</ul>
+
+<p>
+Dubbed LSQ, this paper is the most famous work and also the foundation of modern QAT (quantization aware training). If you wish to implement QAT yourself, you may want to read this paper.
+</p>
+
+<p>
+Unfortunately, this paper does not have an official implementation. However, you can search github for unofficial implementations or you can contact Faaiz Asim(faaizasm@unist.ac.kr) , a phD student from our lab.
+</p>
+
+
+<ul class="org-ul">
+<li>2020 ReActNet: Towards Precise Binary Neural Network with Generalized Activation Functions <a href="https://arxiv.org/abs/2003.03488">https://arxiv.org/abs/2003.03488</a></li>
+</ul>
+
+<p>
+After the advent of LSQ, it became relatively easy to achieve near FP32 performance only with 4-bit quantization. However, BNNs still have a large accuracy drop compared to 4-bit QNNs (Quantized Neural Networks).
+</p>
+
+<p>
+ReActNet is a more advanced BNN architecture tailored for CNNs. If you want to push your BNN accuracy to the limit, you might want to refer this paper.
+</p>
+
+
+<ul class="org-ul">
+<li>2022 Digital Psum Quantization <a href="https://dl.acm.org/doi/abs/10.1145/3508352.3549418">https://dl.acm.org/doi/abs/10.1145/3508352.3549418</a></li>
+</ul>
+
+<p>
+I was surprised to see a lot of students were actually interested in accumulator precision quantization. Unfortunately, not much work targets this problem. You can read the 2022 paper from myself.
+</p>
+
+
+<ul class="org-ul">
+<li>2022 CSQ: Centered Symmetric Quantization <a href="https://bmvc2022.mpi-inf.mpg.de/0538.pdf">https://bmvc2022.mpi-inf.mpg.de/0538.pdf</a></li>
+</ul>
+
+<p>
+Although XNOR-POPCOUNT was proposed for accelerating BNNs, it also can be used for sub 4-bit QNNs. You can refer to this paper written by Faaiz Asim and me.
+</p>
+
+<p>
+&#x2013;JW
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Jongeun Lee</p>
+<p class="date">Date: 2026-03-04 Wed 16:23</p>
+<p class="validation">Homepage: <a href="https://iccl.unist.ac.kr">ICCL.UNIST.AC.KR</a></p>
+</div>
+</body>
+</html>
