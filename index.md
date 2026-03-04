@@ -1,0 +1,1 @@
+- Spring 2026, [EEE426: Tensor Processor Design for Image Recognition (POL)][./course-26-pol/]
